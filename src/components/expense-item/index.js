@@ -6,7 +6,7 @@ function ExpenseItem({ expense }) {
     <li>
       <div>
         <span>{description}</span>
-        <span> - </span>
+        <span> --- </span>
         <span>£{amount}</span>
       </div>
       <div>
