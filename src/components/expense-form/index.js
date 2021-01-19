@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 function ExpenseForm({
   description,
   amount,
   handleDescription,
   handleAmount,
   handleSubmit,
+  edit,
 }) {
   return (
     <div>
@@ -27,7 +28,7 @@ function ExpenseForm({
           />
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">{edit ? "Edit" : "Submit"}</button>
         </div>
       </form>
     </div>

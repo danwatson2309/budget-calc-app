@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import ExpenseItem from "../expense-item/index";
 
-function ExpenseList({ expenses }) {
+function ExpenseList({ expenses, handleEdit, handleDelete, clearList }) {
   return (
     <>
       <ul>
         {expenses.map((expense) => {
-          return <ExpenseItem expense={expense} />;
+          return (
+            <ExpenseItem
+              key={expense.id}
+              expense={expense}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            />
+          );
         })}
       </ul>
-      {expenses.length > 0 && <button>Clear Expenses</button>}
+      {expenses.length > 0 && (
+        <button onClick={clearList}>Clear Expenses</button>
+      )}
     </>
   );
 }
